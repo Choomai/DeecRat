@@ -1646,7 +1646,8 @@ namespace Server
         {
             try
             {
-                MsgPack msgpack = new MsgPack();
+                throw new Exception("Function is not available and unsafe.");
+                /*MsgPack msgpack = new MsgPack();
                 msgpack.ForcePathObject("Pac_ket").AsString = "plu_gin";
                 msgpack.ForcePathObject("Dll").AsString = (GetHash.GetChecksum(@"Plugins\Recovery.dll"));
 
@@ -1654,11 +1655,11 @@ namespace Server
                 {
                     ThreadPool.QueueUserWorkItem(client.Send, msgpack.Encode2Bytes());
                 }
-                new HandleLogs().Addmsg("Recovering...", Color.Black);
+                new HandleLogs().Addmsg("Recovering...", Color.Black);*/
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Password Recovery", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
@@ -1667,7 +1668,8 @@ namespace Server
         {
             try
             {
-                MsgPack msgpack = new MsgPack();
+                throw new Exception("Function is not available and unsafe.");
+                /*MsgPack msgpack = new MsgPack();
                 msgpack.ForcePathObject("Pac_ket").AsString = "plu_gin";
                 msgpack.ForcePathObject("Dll").AsString = (GetHash.GetChecksum(@"Plugins\Discord.dll"));
 
@@ -1675,11 +1677,11 @@ namespace Server
                 {
                     ThreadPool.QueueUserWorkItem(client.Send, msgpack.Encode2Bytes());
                 }
-                new HandleLogs().Addmsg("Recovering Discord...", Color.Black);
+                new HandleLogs().Addmsg("Recovering Discord...", Color.Black);*/
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Discord Recovery", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
