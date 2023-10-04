@@ -682,7 +682,7 @@ namespace Server
             {
                 return;
             }*/
-            MessageBox.Show("Function not implemented.", "Reverse Shell", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Function not implemented.", "Reverse Proxy", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void RemoteScreenToolStripMenuItem_Click(object sender, EventArgs e)
