@@ -175,7 +175,7 @@ namespace Server.Forms
             catch { }
         }
 
-        private async void BtnBuild_Click(object sender, EventArgs e)
+        private void BtnBuild_Click(object sender, EventArgs e)
         {
             if (!chkPaste_bin.Checked && listBoxIP.Items.Count == 0 || listBoxPort.Items.Count == 0) return;
 
