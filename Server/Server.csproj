@@ -70,6 +70,9 @@
       <HintPath>Resources\cGeoIp.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
+    <Reference Include="DarkUI">
+      <HintPath>..\..\DarkUI\DarkUI\bin\Debug\DarkUI.dll</HintPath>
+    </Reference>
     <Reference Include="dnlib, Version=3.3.2.0, Culture=neutral, PublicKeyToken=50e96378b6e77999, processorArchitecture=MSIL">
       <HintPath>..\packages\dnlib.3.3.2\lib\net45\dnlib.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>

