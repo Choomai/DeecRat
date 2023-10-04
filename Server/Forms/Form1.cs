@@ -648,7 +648,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Remote Shell", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
@@ -748,7 +748,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Remote Camera", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
@@ -780,7 +780,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "File Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
@@ -812,7 +812,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Process Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
@@ -853,7 +853,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Send File to Disk", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
@@ -894,7 +894,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Send File to Memory", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -926,7 +926,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
                 return;
             }
         }
@@ -953,12 +953,12 @@ namespace Server
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Chat", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
 
-        private void VisteWebsiteToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void VisitWebsiteToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -984,7 +984,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Visit Website", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
                 return;
             }
         }

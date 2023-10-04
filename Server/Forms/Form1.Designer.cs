@@ -33,6 +33,7 @@
             this.contextMenuClient = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.RemoteManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RemoteShellToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ReverseProxyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RemoteScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RemoteCameraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.remoteRegeditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +52,7 @@
             this.runShellcodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MessageBoxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ChatToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.VisteWebsiteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.VisitWebsiteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ChangeWallpaperToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.KeyloggerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.FileSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -151,7 +152,6 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ConnectTimeout = new System.Windows.Forms.Timer(this.components);
-            this.ReverseProxyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuClient.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.contextMenuLogs.SuspendLayout();
@@ -182,7 +182,7 @@
             this.justForFunToolStripMenuItem,
             this.InformationToolStripMenuItem});
             this.contextMenuClient.Name = "contextMenuStrip1";
-            this.contextMenuClient.Size = new System.Drawing.Size(181, 202);
+            this.contextMenuClient.Size = new System.Drawing.Size(156, 180);
             // 
             // RemoteManagerToolStripMenuItem
             // 
@@ -207,6 +207,13 @@
             this.RemoteShellToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.RemoteShellToolStripMenuItem.Text = "Remote Shell";
             this.RemoteShellToolStripMenuItem.Click += new System.EventHandler(this.RemoteShellToolStripMenuItem_Click);
+            // 
+            // ReverseProxyToolStripMenuItem
+            // 
+            this.ReverseProxyToolStripMenuItem.Name = "ReverseProxyToolStripMenuItem";
+            this.ReverseProxyToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.ReverseProxyToolStripMenuItem.Text = "Reverse Proxy";
+            this.ReverseProxyToolStripMenuItem.Click += new System.EventHandler(this.ReverseProxyToolStripMenuItem_Click);
             // 
             // RemoteScreenToolStripMenuItem
             // 
@@ -287,7 +294,7 @@
             this.runShellcodeToolStripMenuItem,
             this.MessageBoxToolStripMenuItem,
             this.ChatToolStripMenuItem1,
-            this.VisteWebsiteToolStripMenuItem1,
+            this.VisitWebsiteToolStripMenuItem1,
             this.ChangeWallpaperToolStripMenuItem1,
             this.KeyloggerToolStripMenuItem1,
             this.FileSearchToolStripMenuItem});
@@ -302,7 +309,7 @@
             this.SendFileToDiskToolStripMenuItem,
             this.SendFileToMemoryToolStripMenuItem});
             this.SendFileToolStripMenuItem1.Name = "SendFileToolStripMenuItem1";
-            this.SendFileToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.SendFileToolStripMenuItem1.Size = new System.Drawing.Size(171, 22);
             this.SendFileToolStripMenuItem1.Text = "Send File";
             // 
             // fromUrlToolStripMenuItem
@@ -329,49 +336,49 @@
             // runShellcodeToolStripMenuItem
             // 
             this.runShellcodeToolStripMenuItem.Name = "runShellcodeToolStripMenuItem";
-            this.runShellcodeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.runShellcodeToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.runShellcodeToolStripMenuItem.Text = "Run Shellcode";
             this.runShellcodeToolStripMenuItem.Click += new System.EventHandler(this.runShellcodeToolStripMenuItem_Click);
             // 
             // MessageBoxToolStripMenuItem
             // 
             this.MessageBoxToolStripMenuItem.Name = "MessageBoxToolStripMenuItem";
-            this.MessageBoxToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.MessageBoxToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.MessageBoxToolStripMenuItem.Text = "MessageBox";
             this.MessageBoxToolStripMenuItem.Click += new System.EventHandler(this.MessageBoxToolStripMenuItem_Click);
             // 
             // ChatToolStripMenuItem1
             // 
             this.ChatToolStripMenuItem1.Name = "ChatToolStripMenuItem1";
-            this.ChatToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.ChatToolStripMenuItem1.Size = new System.Drawing.Size(171, 22);
             this.ChatToolStripMenuItem1.Text = "Chat";
             this.ChatToolStripMenuItem1.Click += new System.EventHandler(this.ChatToolStripMenuItem1_Click);
             // 
-            // VisteWebsiteToolStripMenuItem1
+            // VisitWebsiteToolStripMenuItem1
             // 
-            this.VisteWebsiteToolStripMenuItem1.Name = "VisteWebsiteToolStripMenuItem1";
-            this.VisteWebsiteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.VisteWebsiteToolStripMenuItem1.Text = "Viste Website";
-            this.VisteWebsiteToolStripMenuItem1.Click += new System.EventHandler(this.VisteWebsiteToolStripMenuItem1_Click);
+            this.VisitWebsiteToolStripMenuItem1.Name = "VisitWebsiteToolStripMenuItem1";
+            this.VisitWebsiteToolStripMenuItem1.Size = new System.Drawing.Size(171, 22);
+            this.VisitWebsiteToolStripMenuItem1.Text = "Visit Website";
+            this.VisitWebsiteToolStripMenuItem1.Click += new System.EventHandler(this.VisitWebsiteToolStripMenuItem1_Click);
             // 
             // ChangeWallpaperToolStripMenuItem1
             // 
             this.ChangeWallpaperToolStripMenuItem1.Name = "ChangeWallpaperToolStripMenuItem1";
-            this.ChangeWallpaperToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.ChangeWallpaperToolStripMenuItem1.Size = new System.Drawing.Size(171, 22);
             this.ChangeWallpaperToolStripMenuItem1.Text = "Change Wallpaper";
             this.ChangeWallpaperToolStripMenuItem1.Click += new System.EventHandler(this.ChangeWallpaperToolStripMenuItem1_Click);
             // 
             // KeyloggerToolStripMenuItem1
             // 
             this.KeyloggerToolStripMenuItem1.Name = "KeyloggerToolStripMenuItem1";
-            this.KeyloggerToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.KeyloggerToolStripMenuItem1.Size = new System.Drawing.Size(171, 22);
             this.KeyloggerToolStripMenuItem1.Text = "Keylogger";
             this.KeyloggerToolStripMenuItem1.Click += new System.EventHandler(this.KeyloggerToolStripMenuItem1_Click);
             // 
             // FileSearchToolStripMenuItem
             // 
             this.FileSearchToolStripMenuItem.Name = "FileSearchToolStripMenuItem";
-            this.FileSearchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.FileSearchToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.FileSearchToolStripMenuItem.Text = "File Search";
             this.FileSearchToolStripMenuItem.Click += new System.EventHandler(this.FileSearchToolStripMenuItem_Click);
             // 
@@ -391,7 +398,7 @@
             // dDOSToolStripMenuItem
             // 
             this.dDOSToolStripMenuItem.Name = "dDOSToolStripMenuItem";
-            this.dDOSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dDOSToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.dDOSToolStripMenuItem.Text = "DDOS";
             this.dDOSToolStripMenuItem.Click += new System.EventHandler(this.dDOSToolStripMenuItem_Click);
             // 
@@ -401,7 +408,7 @@
             this.EncryptToolStripMenuItem,
             this.DecryptToolStripMenuItem});
             this.RansomwareToolStripMenuItem.Name = "RansomwareToolStripMenuItem";
-            this.RansomwareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.RansomwareToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.RansomwareToolStripMenuItem.Text = "Ransomware";
             // 
             // EncryptToolStripMenuItem
@@ -421,28 +428,28 @@
             // DisableWDToolStripMenuItem
             // 
             this.DisableWDToolStripMenuItem.Name = "DisableWDToolStripMenuItem";
-            this.DisableWDToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.DisableWDToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.DisableWDToolStripMenuItem.Text = "Disable WD";
             this.DisableWDToolStripMenuItem.Click += new System.EventHandler(this.DisableWDToolStripMenuItem_Click);
             // 
             // PasswordRecoveryToolStripMenuItem
             // 
             this.PasswordRecoveryToolStripMenuItem.Name = "PasswordRecoveryToolStripMenuItem";
-            this.PasswordRecoveryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.PasswordRecoveryToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.PasswordRecoveryToolStripMenuItem.Text = "Password Recovery";
             this.PasswordRecoveryToolStripMenuItem.Click += new System.EventHandler(this.PasswordRecoveryToolStripMenuItem_Click);
             // 
             // DiscordRecoveryToolStripMenuItem
             // 
             this.DiscordRecoveryToolStripMenuItem.Name = "DiscordRecoveryToolStripMenuItem";
-            this.DiscordRecoveryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.DiscordRecoveryToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.DiscordRecoveryToolStripMenuItem.Text = "Discord Recovery";
             this.DiscordRecoveryToolStripMenuItem.Click += new System.EventHandler(this.DiscordRecoveryToolStripMenuItem_Click);
             // 
             // DisableUACToolStripMenuItem
             // 
             this.DisableUACToolStripMenuItem.Name = "DisableUACToolStripMenuItem";
-            this.DisableUACToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.DisableUACToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.DisableUACToolStripMenuItem.Text = "Disable UAC";
             this.DisableUACToolStripMenuItem.Click += new System.EventHandler(this.DisableUACToolStripMenuItem_Click);
             // 
@@ -465,7 +472,7 @@
             this.UninstallToolStripMenuItem,
             this.ClientFolderToolStripMenuItem});
             this.ClientControlToolStripMenuItem.Name = "ClientControlToolStripMenuItem";
-            this.ClientControlToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ClientControlToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.ClientControlToolStripMenuItem.Text = "Client Control";
             // 
             // StopToolStripMenuItem1
@@ -517,7 +524,7 @@
             this.RebootToolStripMenuItem,
             this.LogoutToolStripMenuItem});
             this.SystemToolStripMenuItem.Name = "SystemToolStripMenuItem";
-            this.SystemToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SystemToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.SystemToolStripMenuItem.Text = "System";
             // 
             // ShutDownToolStripMenuItem
@@ -629,7 +636,7 @@
             // InformationToolStripMenuItem
             // 
             this.InformationToolStripMenuItem.Name = "InformationToolStripMenuItem";
-            this.InformationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.InformationToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.InformationToolStripMenuItem.Text = "Information";
             this.InformationToolStripMenuItem.Click += new System.EventHandler(this.InformationToolStripMenuItem_Click);
             // 
@@ -1053,7 +1060,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(859, 216);
+            this.tabPage3.Size = new System.Drawing.Size(859, 215);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Screens";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1068,7 +1075,7 @@
             this.listView3.Margin = new System.Windows.Forms.Padding(2);
             this.listView3.Name = "listView3";
             this.listView3.ShowItemToolTips = true;
-            this.listView3.Size = new System.Drawing.Size(859, 216);
+            this.listView3.Size = new System.Drawing.Size(859, 215);
             this.listView3.SmallImageList = this.ThumbnailImageList;
             this.listView3.TabIndex = 0;
             this.listView3.UseCompatibleStateImageBehavior = false;
@@ -1080,7 +1087,7 @@
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage4.Size = new System.Drawing.Size(859, 216);
+            this.tabPage4.Size = new System.Drawing.Size(859, 215);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Auto Task";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1098,7 +1105,7 @@
             this.listView4.Location = new System.Drawing.Point(2, 2);
             this.listView4.Margin = new System.Windows.Forms.Padding(2);
             this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(855, 212);
+            this.listView4.Size = new System.Drawing.Size(855, 211);
             this.listView4.TabIndex = 0;
             this.listView4.UseCompatibleStateImageBehavior = false;
             this.listView4.View = System.Windows.Forms.View.Details;
@@ -1149,13 +1156,6 @@
             this.ConnectTimeout.Enabled = true;
             this.ConnectTimeout.Interval = 5000;
             this.ConnectTimeout.Tick += new System.EventHandler(this.ConnectTimeout_Tick);
-            // 
-            // ReverseProxyToolStripMenuItem
-            // 
-            this.ReverseProxyToolStripMenuItem.Name = "ReverseProxyToolStripMenuItem";
-            this.ReverseProxyToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.ReverseProxyToolStripMenuItem.Text = "Reverse Proxy";
-            this.ReverseProxyToolStripMenuItem.Click += new System.EventHandler(this.ReverseProxyToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -1235,7 +1235,7 @@
         private System.Windows.Forms.ToolStripMenuItem SendFileToMemoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MessageBoxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ChatToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem VisteWebsiteToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem VisitWebsiteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ChangeWallpaperToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem KeyloggerToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem SystemControlToolStripMenuItem;
