@@ -122,7 +122,7 @@ namespace Server.Handle_Packet
                 if (Properties.Settings.Default.Notification == true)
                 {
                     Program.form1.notifyIcon1.Icon = Resources.DcRat;
-                    Program.form1.notifyIcon1.BalloonTipText = $@"Connected {client.Ip} : {client.TcpClient.LocalEndPoint.ToString().Split(':')[1]}";
+                    Program.form1.notifyIcon1.BalloonTipText = $"Connected {client.Ip}:{client.TcpClient.LocalEndPoint.ToString().Split(':')[1]}\n{unpack_msgpack.ForcePathObject("Group").AsString} | {unpack_msgpack.ForcePathObject("User").AsString}\nOS: {unpack_msgpack.ForcePathObject("OS").AsString}";
                     Program.form1.notifyIcon1.ShowBalloonTip(100);
                     if (Properties.Settings.Default.DingDing == true && Properties.Settings.Default.WebHook != null && Properties.Settings.Default.Secret != null)
                     {
@@ -131,8 +131,8 @@ namespace Server.Handle_Packet
                             string content = $"Client {client.Ip} connected" + "\n"
                                 + "Group:" + unpack_msgpack.ForcePathObject("Group").AsString + "\n"
                                 + "User:" + unpack_msgpack.ForcePathObject("User").AsString + "\n"
-                                    + "OS:" + unpack_msgpack.ForcePathObject("OS").AsString + "\n"
-                                    + "User:" + unpack_msgpack.ForcePathObject("Admin").AsString;
+                                + "OS:" + unpack_msgpack.ForcePathObject("OS").AsString + "\n"
+                                + "User:" + unpack_msgpack.ForcePathObject("Admin").AsString;
                                 DingDing.Send(Properties.Settings.Default.WebHook, Properties.Settings.Default.Secret, content);
                             } 
                             catch (Exception ex) 

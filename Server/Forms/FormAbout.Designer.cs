@@ -83,7 +83,7 @@ namespace Server.Forms
             this.richTextBox1.ShortcutsEnabled = false;
             this.richTextBox1.Size = new System.Drawing.Size(346, 256);
             this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "\nDcRat v1.0.9-choomai\n\nCurrent Maintainer: Choomai\n\nAll credits go to qwqdanchun " +
+            this.richTextBox1.Text = "\nDcRat 1.0.10-choomai\n\nCurrent Maintainer: Choomai\n\nAll credits go to qwqdanchun " +
     "as the original developer of DcRat\n";
             this.richTextBox1.ZoomFactor = 1.101F;
             // 
