@@ -189,12 +189,6 @@
     <Compile Include="Forms\FormRegValueEditWord.Designer.cs">
       <DependentUpon>FormRegValueEditWord.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormSetting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormSetting.Designer.cs">
-      <DependentUpon>FormSetting.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,7 +328,6 @@
     <Compile Include="Handle Packet\HandleProcessManager.cs" />
     <Compile Include="Helper\AsyncTask.cs" />
     <Compile Include="Helper\Controls\ByteConverter.cs" />
-    <Compile Include="Helper\DingDing.cs" />
     <Compile Include="Helper\CreateCertificate.cs" />
     <Compile Include="Helper\Controls\HexEditor\ByteCollection.cs" />
     <Compile Include="Helper\Controls\HexEditor\Caret.cs" />
@@ -460,9 +453,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDownloadFile.resx">
       <DependentUpon>FormDownloadFile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormSetting.resx">
-      <DependentUpon>FormSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormShell.resx">
       <DependentUpon>FormShell.cs</DependentUpon>
