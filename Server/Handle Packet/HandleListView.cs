@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Media;
 using Server.Helper;
+using Server.Properties;
 using IP2Region;
 
 namespace Server.Handle_Packet
@@ -102,7 +103,7 @@ namespace Server.Handle_Packet
                 }
                 client.LV.SubItems.Add(unpack_msgpack.ForcePathObject("Admin").AsString);
                 client.LV.SubItems.Add(unpack_msgpack.ForcePathObject("Anti_virus").AsString);
-                client.LV.SubItems.Add("0000 MS");
+                client.LV.SubItems.Add("?? MS");
                 client.LV.SubItems.Add("...");
                 client.LV.ToolTipText = "[Path] " + unpack_msgpack.ForcePathObject("Path").AsString + Environment.NewLine;
                 client.LV.ToolTipText += "[Paste_bin] " + unpack_msgpack.ForcePathObject("Paste_bin").AsString;
@@ -120,8 +121,8 @@ namespace Server.Handle_Packet
 
                 if (Properties.Settings.Default.Notification == true)
                 {
-                    Program.form1.notifyIcon1.BalloonTipText = $@"Connected 
-{client.Ip} : {client.TcpClient.LocalEndPoint.ToString().Split(':')[1]}";
+                    Program.form1.notifyIcon1.Icon = Resources.DcRat;
+                    Program.form1.notifyIcon1.BalloonTipText = $@"Connected {client.Ip} : {client.TcpClient.LocalEndPoint.ToString().Split(':')[1]}";
                     Program.form1.notifyIcon1.ShowBalloonTip(100);
                     if (Properties.Settings.Default.DingDing == true && Properties.Settings.Default.WebHook != null && Properties.Settings.Default.Secret != null)
                     {
