@@ -36,7 +36,6 @@ namespace Server
         {
             InitializeComponent();
             SetWindowTheme(listView1.Handle, "explorer", null);
-            this.Opacity = 0;
             formDOS = new FormDOS
             {
                 Name = "DOS",
