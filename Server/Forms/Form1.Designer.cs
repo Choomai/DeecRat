@@ -119,6 +119,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BlockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.darkThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -149,10 +152,7 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ConnectTimeout = new System.Windows.Forms.Timer(this.components);
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.darkThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BuilderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.BlockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuClient.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.contextMenuLogs.SuspendLayout();
@@ -857,6 +857,7 @@
             // FileToolStripMenuItem
             // 
             this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BuilderToolStripMenuItem,
             this.ExitToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
             this.FileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -868,6 +869,29 @@
             this.ExitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ExitToolStripMenuItem.Text = "Exit";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BlockToolStripMenuItem,
+            this.darkThemeToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // BlockToolStripMenuItem
+            // 
+            this.BlockToolStripMenuItem.Name = "BlockToolStripMenuItem";
+            this.BlockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.BlockToolStripMenuItem.Text = "Block";
+            this.BlockToolStripMenuItem.Click += new System.EventHandler(this.BlockToolStripMenuItem_Click1);
+            // 
+            // darkThemeToolStripMenuItem
+            // 
+            this.darkThemeToolStripMenuItem.CheckOnClick = true;
+            this.darkThemeToolStripMenuItem.Name = "darkThemeToolStripMenuItem";
+            this.darkThemeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.darkThemeToolStripMenuItem.Text = "Dark Theme";
             // 
             // HelpToolStripMenuItem
             // 
@@ -881,14 +905,14 @@
             // DocumentToolStripMenuItem
             // 
             this.DocumentToolStripMenuItem.Name = "DocumentToolStripMenuItem";
-            this.DocumentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.DocumentToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.DocumentToolStripMenuItem.Text = "Document";
             this.DocumentToolStripMenuItem.Click += new System.EventHandler(this.DocumentToolStripMenuItem_Click);
             // 
             // AboutToolStripMenuItem
             // 
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.AboutToolStripMenuItem.Text = "About";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
@@ -1135,34 +1159,12 @@
             this.ConnectTimeout.Interval = 5000;
             this.ConnectTimeout.Tick += new System.EventHandler(this.ConnectTimeout_Tick);
             // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BlockToolStripMenuItem,
-            this.BuilderToolStripMenuItem,
-            this.darkThemeToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            // 
-            // darkThemeToolStripMenuItem
-            // 
-            this.darkThemeToolStripMenuItem.CheckOnClick = true;
-            this.darkThemeToolStripMenuItem.Name = "darkThemeToolStripMenuItem";
-            this.darkThemeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.darkThemeToolStripMenuItem.Text = "Dark Theme";
-            // 
             // BuilderToolStripMenuItem
             // 
             this.BuilderToolStripMenuItem.Name = "BuilderToolStripMenuItem";
             this.BuilderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.BuilderToolStripMenuItem.Text = "Builder";
-            // 
-            // BlockToolStripMenuItem
-            // 
-            this.BlockToolStripMenuItem.Name = "BlockToolStripMenuItem";
-            this.BlockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.BlockToolStripMenuItem.Text = "Block";
+            this.BuilderToolStripMenuItem.Click += new System.EventHandler(this.builderToolStripMenuItem1_Click);
             // 
             // Form1
             // 
@@ -1203,6 +1205,10 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void BlockToolStripMenuItem_Click1(object sender, System.EventArgs e) {
+            throw new System.NotImplementedException();
         }
 
         #endregion
@@ -1327,8 +1333,8 @@
         private System.Windows.Forms.ToolStripMenuItem ReverseProxyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem BlockToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem BuilderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem darkThemeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem BuilderToolStripMenuItem;
     }
 }
 
