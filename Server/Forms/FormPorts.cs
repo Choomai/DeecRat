@@ -13,7 +13,7 @@ namespace Server.Forms
         public FormPorts()
         {
             InitializeComponent();
-            this.Opacity = 0;
+            //this.Opacity = 0;
         }
 
         private void PortsFrm_Load(object sender, EventArgs e)
