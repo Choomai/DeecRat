@@ -28,14 +28,14 @@ namespace Server.Helper
             return (Math.Sign(byteCount) * num).ToString() + suf[place];
         }
 
-        public static async Task FadeIn(Form o, int interval = 80)
+        /*public static async Task FadeIn(Form o, int interval = 80)
         {
             while (o.Opacity < 1.0)
             {
                 await Task.Delay(interval);
                 o.Opacity += 0.05;
             }
-        }
+        }*/
         public static double DiffSeconds(DateTime startTime, DateTime endTime)
         {
             TimeSpan secondSpan = new TimeSpan(endTime.Ticks - startTime.Ticks);

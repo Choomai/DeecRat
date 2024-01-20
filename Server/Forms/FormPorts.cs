@@ -18,7 +18,7 @@ namespace Server.Forms
 
         private void PortsFrm_Load(object sender, EventArgs e)
         {
-            _ = Methods.FadeIn(this, 5);
+            //_ = Methods.FadeIn(this, 5);
 
             if (Properties.Settings.Default.Ports.Length == 0)
             {

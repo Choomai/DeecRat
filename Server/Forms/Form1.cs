@@ -168,7 +168,7 @@ namespace Server
 #endif
 
 
-            await Methods.FadeIn(this, 5);
+            // await Methods.FadeIn(this, 5);
             trans = true;
 
             if (Properties.Settings.Default.Notification == true)

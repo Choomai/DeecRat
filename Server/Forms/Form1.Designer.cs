@@ -1147,6 +1147,7 @@
             // 
             // darkThemeToolStripMenuItem
             // 
+            this.darkThemeToolStripMenuItem.CheckOnClick = true;
             this.darkThemeToolStripMenuItem.Name = "darkThemeToolStripMenuItem";
             this.darkThemeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.darkThemeToolStripMenuItem.Text = "Dark Theme";
