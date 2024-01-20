@@ -118,9 +118,6 @@
             this.TimerTask = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.BuilderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.BlockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -152,6 +149,10 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ConnectTimeout = new System.Windows.Forms.Timer(this.components);
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.darkThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BuilderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BlockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuClient.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.contextMenuLogs.SuspendLayout();
@@ -845,6 +846,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileToolStripMenuItem,
+            this.settingsToolStripMenuItem,
             this.HelpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -855,34 +857,10 @@
             // FileToolStripMenuItem
             // 
             this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BuilderToolStripMenuItem,
-            this.BlockToolStripMenuItem,
-            this.SettingToolStripMenuItem,
             this.ExitToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
             this.FileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.FileToolStripMenuItem.Text = "File";
-            // 
-            // BuilderToolStripMenuItem
-            // 
-            this.BuilderToolStripMenuItem.Name = "BuilderToolStripMenuItem";
-            this.BuilderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.BuilderToolStripMenuItem.Text = "Builder";
-            this.BuilderToolStripMenuItem.Click += new System.EventHandler(this.builderToolStripMenuItem1_Click);
-            // 
-            // BlockToolStripMenuItem
-            // 
-            this.BlockToolStripMenuItem.Name = "BlockToolStripMenuItem";
-            this.BlockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.BlockToolStripMenuItem.Text = "Block";
-            this.BlockToolStripMenuItem.Click += new System.EventHandler(this.BlockToolStripMenuItem_Click);
-            // 
-            // SettingToolStripMenuItem
-            // 
-            this.SettingToolStripMenuItem.Name = "SettingToolStripMenuItem";
-            this.SettingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.SettingToolStripMenuItem.Text = "Setting";
-            this.SettingToolStripMenuItem.Click += new System.EventHandler(this.SettingToolStripMenuItem_Click);
             // 
             // ExitToolStripMenuItem
             // 
@@ -1157,6 +1135,34 @@
             this.ConnectTimeout.Interval = 5000;
             this.ConnectTimeout.Tick += new System.EventHandler(this.ConnectTimeout_Tick);
             // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BlockToolStripMenuItem,
+            this.BuilderToolStripMenuItem,
+            this.darkThemeToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // darkThemeToolStripMenuItem
+            // 
+            this.darkThemeToolStripMenuItem.Name = "darkThemeToolStripMenuItem";
+            this.darkThemeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.darkThemeToolStripMenuItem.Text = "Dark Theme";
+            // 
+            // BuilderToolStripMenuItem
+            // 
+            this.BuilderToolStripMenuItem.Name = "BuilderToolStripMenuItem";
+            this.BuilderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.BuilderToolStripMenuItem.Text = "Builder";
+            // 
+            // BlockToolStripMenuItem
+            // 
+            this.BlockToolStripMenuItem.Name = "BlockToolStripMenuItem";
+            this.BlockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.BlockToolStripMenuItem.Text = "Block";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1275,14 +1281,12 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem BuilderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem HelpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DocumentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem StartToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem StopToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem BlockToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FileSearchToolStripMenuItem;
         private System.Windows.Forms.ColumnHeader lv_group;
         private System.Windows.Forms.ToolStripMenuItem InformationToolStripMenuItem;
@@ -1301,7 +1305,6 @@
         private System.Windows.Forms.ToolStripMenuItem FodhelperToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DisableUACToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CompMgmtLauncherToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem SettingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem autoKeyloggerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SchtaskUninstallToolStripMenuItem;
         private System.Windows.Forms.ColumnHeader lv_camera;
@@ -1321,6 +1324,10 @@
         private System.Windows.Forms.ToolStripMenuItem noSystemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DiscordRecoveryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ReverseProxyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem BlockToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem BuilderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem darkThemeToolStripMenuItem;
     }
 }
 
