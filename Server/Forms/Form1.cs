@@ -146,11 +146,13 @@ namespace Server {
             trans = true;
 
             if (Properties.Settings.Default.Notification == true) {
-                toolStripStatusLabel2.ForeColor = Color.Green;
+                this.notificationToolStripMenuItem.Checked = true;
+                this.notificationToolStripMenuItem.Enabled = true;
+                //toolStripStatusLabel2.ForeColor = Color.Green;
             }
-            else {
-                toolStripStatusLabel2.ForeColor = Color.Black;
-            }
+            //else {
+                //toolStripStatusLabel2.ForeColor = Color.Black;
+            //}
 
             //Disable contact information to promote this rat on some forums
             if (Application.StartupPath.Contains("52pojie"))
@@ -207,14 +209,14 @@ namespace Server {
             this.listView1.Sort();
         }
 
-        private void ToolStripStatusLabel2_Click(object sender, EventArgs e) {
+        private void NotificationToolStripMenuItem_Click(object sender, EventArgs e) {
             if (Properties.Settings.Default.Notification == true) {
                 Properties.Settings.Default.Notification = false;
-                toolStripStatusLabel2.ForeColor = Color.Black;
+                //toolStripStatusLabel2.ForeColor = Color.Black
             }
             else {
                 Properties.Settings.Default.Notification = true;
-                toolStripStatusLabel2.ForeColor = Color.Green;
+                //toolStripStatusLabel2.ForeColor = Color.Green;
             }
             Properties.Settings.Default.Save();
         }
@@ -235,9 +237,8 @@ namespace Server {
         }
 
         private void UpdateUI_Tick(object sender, EventArgs e) {
-            Text = $"{Settings.Version}";
             lock (Settings.LockListviewClients)
-                toolStripStatusLabel1.Text = $"Online {listView1.Items.Count.ToString()} | Selected {listView1.SelectedItems.Count.ToString()} | Sent {Methods.BytesToString(Settings.SentValue).ToString()} | Received {Methods.BytesToString(Settings.ReceivedValue).ToString()} | ";
+                toolStripStatusLabel1.Text = $"Online {listView1.Items.Count} | Selected {listView1.SelectedItems.Count} | Sent {Methods.BytesToString(Settings.SentValue)} | Received {Methods.BytesToString(Settings.ReceivedValue)}";
         }
 
         #endregion

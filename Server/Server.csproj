@@ -529,7 +529,6 @@
     <None Include="Resources\offline.wav" />
     <None Include="Resources\avatar.png" />
     <None Include="Resources\avatar1.png" />
-    <Content Include="ILMergeOrder.txt" />
     <Content Include="Resources\DcRat.ico" />
   </ItemGroup>
   <ItemGroup>
