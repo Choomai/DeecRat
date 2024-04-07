@@ -972,19 +972,19 @@
             // 
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.lv_act,
             this.lv_ip,
             this.lv_country,
             this.lv_group,
             this.lv_hwid,
             this.lv_user,
-            this.lv_os,
             this.lv_camera,
+            this.lv_os,
             this.lv_version,
             this.lv_ins,
             this.lv_admin,
             this.lv_av,
-            this.lv_ping});
+            this.lv_ping,
+            this.lv_act});
             this.listView1.ContextMenuStrip = this.contextMenuClient;
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.FullRowSelect = true;
@@ -1000,7 +1000,6 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.ListView1_ColumnClick);
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             this.listView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listView1_KeyDown);
             this.listView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseMove);
             // 
@@ -1012,7 +1011,7 @@
             // lv_country
             // 
             this.lv_country.Text = "Country";
-            this.lv_country.Width = 100;
+            this.lv_country.Width = 124;
             // 
             // lv_group
             // 
@@ -1026,7 +1025,7 @@
             // lv_user
             // 
             this.lv_user.Text = "User";
-            this.lv_user.Width = 100;
+            this.lv_user.Width = 117;
             // 
             // lv_camera
             // 
@@ -1040,7 +1039,7 @@
             // lv_version
             // 
             this.lv_version.Text = "Client version";
-            this.lv_version.Width = 100;
+            this.lv_version.Width = 126;
             // 
             // lv_ins
             // 
@@ -1064,7 +1063,7 @@
             // lv_act
             // 
             this.lv_act.Text = "Activity Program";
-            this.lv_act.Width = 200;
+            this.lv_act.Width = 350;
             // 
             // tabPage3
             // 
