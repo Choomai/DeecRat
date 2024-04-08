@@ -25,17 +25,15 @@ using Quasar.Server.Forms;
 namespace Server {
 
     public partial class Form1 : Form {
-        private bool PortArgs;
         private bool trans;
         public cGeoMain cGeoMain = new cGeoMain();
         public static List<AsyncTask> getTasks = new List<AsyncTask>();
         private ListViewColumnSorter lvwColumnSorter;
 
-        public Form1(bool PortArgs = false) {
+        public Form1() {
             InitializeComponent();
             SetWindowTheme(listView1.Handle, "explorer", null);
             this.Opacity = 0;
-            this.PortArgs = PortArgs;
             formDOS = new FormDOS {
                 Name = "DOS",
                 Text = "DOS",
@@ -138,9 +136,11 @@ namespace Server {
             thread.IsBackground = true;
             thread.Start(8848);
 #else
-            if (this.PortArgs == false) {
+            if (string.IsNullOrEmpty(Settings.Port)) {
                 using (FormPorts portsFrm = new FormPorts()) { portsFrm.ShowDialog(); }
-            }
+            } else {
+                Settings.ServerCertificate = new X509Certificate2(Settings.CertificatePath);
+            };
 #endif
 
 

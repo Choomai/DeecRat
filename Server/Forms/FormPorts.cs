@@ -36,8 +36,7 @@ namespace Server.Forms {
                 using (FormCertificate formCertificate = new FormCertificate()) {
                     formCertificate.ShowDialog();
                 }
-            }
-            else {
+            } else {
                 Settings.ServerCertificate = new X509Certificate2(Settings.CertificatePath);
             }
 

@@ -23,17 +23,14 @@ namespace Server {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            bool PortArgs = false;
             for (int i = 0; i < args.Length; i++) {
                 if (args[i] == "--port" && i + 1 < args.Length) {
-                    Properties.Settings.Default.Ports = args[i + 1];
-                    Properties.Settings.Default.Save();
-                    PortArgs = true;
+                    Settings.Port = args[i + 1];
                     break;
                 }
             }
 
-            form1 = new Form1(PortArgs);
+            form1 = new Form1();
             Application.Run(form1);
         }
         public static Form1 form1;
