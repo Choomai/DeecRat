@@ -25,15 +25,17 @@ using Quasar.Server.Forms;
 namespace Server {
 
     public partial class Form1 : Form {
+        private bool PortArgs;
         private bool trans;
         public cGeoMain cGeoMain = new cGeoMain();
         public static List<AsyncTask> getTasks = new List<AsyncTask>();
         private ListViewColumnSorter lvwColumnSorter;
 
-        public Form1() {
+        public Form1(bool PortArgs = false) {
             InitializeComponent();
             SetWindowTheme(listView1.Handle, "explorer", null);
             this.Opacity = 0;
+            this.PortArgs = PortArgs;
             formDOS = new FormDOS {
                 Name = "DOS",
                 Text = "DOS",
@@ -136,8 +138,8 @@ namespace Server {
             thread.IsBackground = true;
             thread.Start(8848);
 #else
-            using (FormPorts portsFrm = new FormPorts()) {
-                portsFrm.ShowDialog();
+            if (this.PortArgs == false) {
+                using (FormPorts portsFrm = new FormPorts()) { portsFrm.ShowDialog(); }
             }
 #endif
 
@@ -153,10 +155,6 @@ namespace Server {
             //else {
                 //toolStripStatusLabel2.ForeColor = Color.Black;
             //}
-
-            //Disable contact information to promote this rat on some forums
-            if (Application.StartupPath.Contains("52pojie"))
-                AboutToolStripMenuItem.Visible = false;
 
             new Thread(() => {
                 Connect();

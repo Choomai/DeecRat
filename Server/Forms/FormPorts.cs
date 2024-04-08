@@ -5,32 +5,24 @@ using System.Diagnostics;
 using Server.Helper;
 using System.Security.Cryptography.X509Certificates;
 
-namespace Server.Forms
-{
-    public partial class FormPorts : Form
-    {
+namespace Server.Forms {
+    public partial class FormPorts : Form {
         private static bool isOK = false;
-        public FormPorts()
-        {
+        public FormPorts() {
             InitializeComponent();
             //this.Opacity = 0;
         }
 
-        private void PortsFrm_Load(object sender, EventArgs e)
-        {
+        private void PortsFrm_Load(object sender, EventArgs e) {
             //_ = Methods.FadeIn(this, 5);
 
-            if (Properties.Settings.Default.Ports.Length == 0)
-            {
+            if (Properties.Settings.Default.Ports.Length == 0) {
                 listBox1.Items.AddRange(new object[] { "8848" });
             }
-            else
-            {
-                try
-                {
+            else {
+                try {
                     string[] ports = Properties.Settings.Default.Ports.Split(new[] { "," }, StringSplitOptions.None);
-                    foreach (string item in ports)
-                    {
+                    foreach (string item in ports) {
                         if (!string.IsNullOrWhiteSpace(item))
                             listBox1.Items.Add(item.Trim());
                     }
@@ -40,27 +32,21 @@ namespace Server.Forms
 
             this.Text = $"{Settings.Version} | Welcome {Environment.UserName}";
 
-            if (!File.Exists(Settings.CertificatePath))
-            {
-                using (FormCertificate formCertificate = new FormCertificate())
-                {
+            if (!File.Exists(Settings.CertificatePath)) {
+                using (FormCertificate formCertificate = new FormCertificate()) {
                     formCertificate.ShowDialog();
                 }
             }
-            else
-            {
+            else {
                 Settings.ServerCertificate = new X509Certificate2(Settings.CertificatePath);
             }
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (listBox1.Items.Count > 0)
-            {
+        private void button1_Click(object sender, EventArgs e) {
+            if (listBox1.Items.Count > 0) {
                 string ports = "";
-                foreach (string item in listBox1.Items)
-                {
+                foreach (string item in listBox1.Items) {
                     ports += item + ",";
                 }
                 Properties.Settings.Default.Ports = ports.Remove(ports.Length - 1);
@@ -70,19 +56,15 @@ namespace Server.Forms
             }
         }
 
-        private void PortsFrm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (!isOK)
-            {
+        private void PortsFrm_FormClosed(object sender, FormClosedEventArgs e) {
+            if (!isOK) {
                 Program.form1.notifyIcon1.Dispose();
                 Environment.Exit(0);
             }
         }
 
-        private void BtnAdd_Click(object sender, EventArgs e)
-        {
-            try
-            {
+        private void BtnAdd_Click(object sender, EventArgs e) {
+            try {
                 Convert.ToInt32(textPorts.Text.Trim());
                 listBox1.Items.Add(textPorts.Text.Trim());
                 textPorts.Clear();
@@ -90,8 +72,7 @@ namespace Server.Forms
             catch { }
         }
 
-        private void BtnDelete_Click(object sender, EventArgs e)
-        {
+        private void BtnDelete_Click(object sender, EventArgs e) {
             listBox1.Items.Remove(listBox1.SelectedItem);
         }
     }
