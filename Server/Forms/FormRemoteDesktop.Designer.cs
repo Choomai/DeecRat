@@ -252,7 +252,7 @@
             // 
             // timerSave
             // 
-            this.timerSave.Interval = 1500;
+            this.timerSave.Interval = 1000 / targetFPS;
             this.timerSave.Tick += new System.EventHandler(this.TimerSave_Tick);
             // 
             // labelWait

