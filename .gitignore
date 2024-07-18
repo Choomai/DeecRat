@@ -28,3 +28,4 @@ bld/
 .vs/DcRat/v16/.suo
 Plugin/Decrypter/Decrypter/bin/
 /libs/AForge.NET
+/packages

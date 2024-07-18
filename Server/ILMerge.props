@@ -35,7 +35,7 @@
     <ILMergeAllowMultipleAssemblyLevelAttributes></ILMergeAllowMultipleAssemblyLevelAttributes>
 
     <!-- See ILMerge documentation -->
-    <ILMergeAllowZeroPeKind></ILMergeAllowZeroPeKind>
+    <ILMergeAllowZeroPeKind>true</ILMergeAllowZeroPeKind>
 
     <!-- The assembly level attributes of each input assembly are copied over into the target assembly -->
     <ILMergeCopyAttributes></ILMergeCopyAttributes>

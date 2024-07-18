@@ -14,8 +14,7 @@ using Server.Connection;
 using Server.MessagePack;
 using System.Threading;
 using System.IO;
-using AForge.Video.FFMPEG;
-using Encoder = System.Drawing.Imaging.Encoder;
+using Accord.Video.FFMPEG;
 
 namespace Server.Forms {
     public partial class FormRemoteDesktop : Form {
