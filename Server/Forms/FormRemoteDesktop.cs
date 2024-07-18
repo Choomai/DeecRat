@@ -2,19 +2,21 @@
 using StreamLibrary.UnsafeCodecs;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Server.Connection;
 using Server.MessagePack;
 using System.Threading;
 using System.IO;
-using Accord.Video.FFMPEG;
+using System.Drawing.Imaging;
+using Encoder = System.Drawing.Imaging.Encoder;
+// using Accord.Video.FFMPEG;
 
 namespace Server.Forms {
     public partial class FormRemoteDesktop : Form {
@@ -36,8 +38,8 @@ namespace Server.Forms {
             _keysPressed = new List<Keys>();
             InitializeComponent();
         }
-        private VideoFileWriter videoFileWriter;
-        private readonly int targetFPS = 30;
+        // private VideoFileWriter videoFileWriter;
+        // private readonly int targetFPS = 30;
 
         private void timer1_Tick(object sender, EventArgs e) {
             try {
@@ -91,12 +93,12 @@ namespace Server.Forms {
                 if (timerSave.Enabled) {
                     timerSave.Stop();
                     btnSave.BackgroundImage = Properties.Resources.save_image;
-                    videoFileWriter.Close();
+                    // videoFileWriter.Close();
                 }
                 else {
-                    videoFileWriter = new VideoFileWriter();
+                    /*videoFileWriter = new VideoFileWriter();
                     videoFileWriter.Open(FullPath + $"\\Capture_{DateTime.Now.ToString("MM-dd-yyyy HH;mm;ss")}.avi", pictureBox1.Image.Width, pictureBox1.Image.Height, targetFPS, VideoCodec.MPEG4);
-                    timerSave.Interval = 1000 / targetFPS;
+                    timerSave.Interval = 1000 / targetFPS;*/
                     timerSave.Start();
                     btnSave.BackgroundImage = Properties.Resources.save_image2;
                     try {
@@ -113,25 +115,25 @@ namespace Server.Forms {
             try {
                 if (!Directory.Exists(FullPath))
                     Directory.CreateDirectory(FullPath);
-                /*Encoder myEncoder = Encoder.Quality;
+                Encoder myEncoder = Encoder.Quality;
                 EncoderParameters myEncoderParameters = new EncoderParameters(1);
                 EncoderParameter myEncoderParameter = new EncoderParameter(myEncoder, 50L);
                 myEncoderParameters.Param[0] = myEncoderParameter;
-                ImageCodecInfo jpgEncoder = GetEncoder(ImageFormat.Jpeg);*/
+                ImageCodecInfo jpgEncoder = GetEncoder(ImageFormat.Jpeg);
 
-                // pictureBox1.Image.Save(FullPath + $"\\IMG_{DateTime.Now.ToString("MM-dd-yyyy HH;mm;ss")}.jpeg", jpgEncoder, myEncoderParameters);
-                Bitmap frame = new Bitmap(pictureBox1.Image.Width, pictureBox1.Image.Height);
+                pictureBox1.Image.Save(FullPath + $"\\IMG_{DateTime.Now:MM-dd-yyyy HH;mm;ss}.jpeg", jpgEncoder, myEncoderParameters);
+                /*Bitmap frame = new Bitmap(pictureBox1.Image.Width, pictureBox1.Image.Height);
                 using (Graphics g = Graphics.FromImage(frame)) { g.DrawImage(pictureBox1.Image, 0, 0); }
                 videoFileWriter.WriteVideoFrame(frame);
 
-                frame?.Dispose();
-                /*myEncoderParameters?.Dispose();
-                myEncoderParameter?.Dispose();*/
+                frame?.Dispose();*/
+                myEncoderParameters?.Dispose();
+                myEncoderParameter?.Dispose();
             }
             catch { }
         }
 
-        /*private ImageCodecInfo GetEncoder(ImageFormat format) {
+        private ImageCodecInfo GetEncoder(ImageFormat format) {
             ImageCodecInfo[] codecs = ImageCodecInfo.GetImageDecoders();
             foreach (ImageCodecInfo codec in codecs) {
                 if (codec.FormatID == format.Guid) {
@@ -139,7 +141,7 @@ namespace Server.Forms {
                 }
             }
             return null;
-        }*/
+        }
 
         private void PictureBox1_MouseDown(object sender, MouseEventArgs e) {
             try {
@@ -185,7 +187,7 @@ namespace Server.Forms {
             catch { }
         }
 
-        private void pictureBox1_MouseMove(object sender, MouseEventArgs e) {
+        private void PictureBox1_MouseMove(object sender, MouseEventArgs e) {
             try {
                 if (button1.Tag == (object)"stop" && pictureBox1.Image != null && pictureBox1.ContainsFocus && isMouse) {
                     Point p = new Point(e.X * rdSize.Width / pictureBox1.Width, e.Y * rdSize.Height / pictureBox1.Height);
@@ -215,7 +217,7 @@ namespace Server.Forms {
         private void FormRemoteDesktop_FormClosed(object sender, FormClosedEventArgs e) {
             try {
                 GetImage?.Dispose();
-                videoFileWriter.Close();
+                // videoFileWriter.Close();
                 ThreadPool.QueueUserWorkItem((o) => {
                     Client?.Disconnected();
                 });
