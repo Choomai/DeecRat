@@ -13,9 +13,7 @@ using System.Windows.Forms;
 using Server.Connection;
 using Server.MessagePack;
 using System.Threading;
-using System.Drawing.Imaging;
 using System.IO;
-using AForge.Video;
 using AForge.Video.FFMPEG;
 using Encoder = System.Drawing.Imaging.Encoder;
 
@@ -99,6 +97,7 @@ namespace Server.Forms {
                 else {
                     videoFileWriter = new VideoFileWriter();
                     videoFileWriter.Open(FullPath + $"\\Capture_{DateTime.Now.ToString("MM-dd-yyyy HH;mm;ss")}.avi", pictureBox1.Image.Width, pictureBox1.Image.Height, targetFPS, VideoCodec.MPEG4);
+                    timerSave.Interval = 1000 / targetFPS;
                     timerSave.Start();
                     btnSave.BackgroundImage = Properties.Resources.save_image2;
                     try {
